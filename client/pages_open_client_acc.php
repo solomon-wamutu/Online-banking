@@ -22,7 +22,7 @@ if (isset($_POST['open_account'])) {
     $client_adr  = $_POST['client_adr'];
 
     //Insert Captured information to a database table
-    $query = "INSERT INTO iB_bankAccounts (acc_name, account_number, acc_type, acc_rates, acc_status, acc_amount, client_id, client_name, client_national_id, client_phone, client_number, client_email, client_adr) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO ib_bankaccounts (acc_name, account_number, acc_type, acc_rates, acc_status, acc_amount, client_id, client_name, client_national_id, client_phone, client_number, client_email, client_adr) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
     //bind paramaters
     $rc = $stmt->bind_param('sssssssssssss', $acc_name, $account_number, $acc_type, $acc_rates, $acc_status, $acc_amount, $client_id, $client_name, $client_national_id, $client_phone, $client_number, $client_email, $client_adr);
@@ -54,7 +54,7 @@ if (isset($_POST['open_account'])) {
         <!-- Content Wrapper. Contains page content -->
         <?php
         $client_id = $_GET['client_id'];
-        $ret = "SELECT * FROM  iB_clients WHERE client_id = ? ";
+        $ret = "SELECT * FROM  ib_clients WHERE client_id = ? ";
         $stmt = $mysqli->prepare($ret);
         $stmt->bind_param('i', $client_id);
         $stmt->execute(); //ok
@@ -139,7 +139,7 @@ if (isset($_POST['open_account'])) {
                                                         <option>Select Any Account types</option>
                                                         <?php
                                                         //fetch all iB_Acc_types
-                                                        $ret = "SELECT * FROM  iB_Acc_types ORDER BY RAND() ";
+                                                        $ret = "SELECT * FROM  ib_acc_types ORDER BY RAND() ";
                                                         $stmt = $mysqli->prepare($ret);
                                                         $stmt->execute(); //ok
                                                         $res = $stmt->get_result();
@@ -154,7 +154,7 @@ if (isset($_POST['open_account'])) {
                                                 </div>
                                                 <div class=" col-md-6 form-group">
                                                     <label for="exampleInputEmail1">Account Type Rates (%)</label>
-                                                    <input type="text" name="acc_rates" readonly required class="form-control" id="AccountRates">
+                                                    <input type="number" name="acc_rates" readonly required class="form-control" id="AccountRates">
                                                 </div>
 
                                                 <div class=" col-md-6 form-group" style="display:none">

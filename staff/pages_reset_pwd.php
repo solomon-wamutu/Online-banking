@@ -19,7 +19,7 @@ if (isset($_POST['reset_password'])) {
     $n = date('y');
     $new_password = bin2hex(random_bytes($n));
     //Insert Captured information to a database table
-    $query = "UPDATE iB_staff SET  password=? WHERE email =?";
+    $query = "UPDATE ib_staff SET  password=? WHERE email =?";
     $stmt = $mysqli->prepare($query);
     //bind paramaters
     $rc = $stmt->bind_param('ss', $new_password, $email);

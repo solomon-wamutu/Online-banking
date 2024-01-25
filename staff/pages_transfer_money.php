@@ -192,7 +192,7 @@ if (isset($_POST['deposit'])) {
                                                         <option>Select Receiving Account</option>
                                                         <?php
                                                         //fetch all iB_Accs
-                                                        $ret = "SELECT * FROM  iB_bankAccounts ";
+                                                        $ret = "SELECT * FROM  ib_bankaccounts ";
                                                         $stmt = $mysqli->prepare($ret);
                                                         $stmt->execute(); //ok
                                                         $res = $stmt->get_result();
@@ -214,12 +214,13 @@ if (isset($_POST['deposit'])) {
                                                     <label for="exampleInputPassword1">Receiving Account Holder</label>
                                                     <input type="text" name="receiving_acc_holder" required class="form-control" id="AccountHolder">
                                                 </div>
-
-                                                <div class=" col-md-4 form-group" style="display:none">
+                                            </div>
+                                            <div class="row">
+                                                <div class=" col-md-4 form-group" style="display:block;">
                                                     <label for="exampleInputPassword1">Transaction Type</label>
                                                     <input type="text" name="tr_type" value="Transfer" required class="form-control" id="exampleInputEmail1">
                                                 </div>
-                                                <div class=" col-md-4 form-group" style="display:none">
+                                                <div class=" col-md-4 form-group" style="display:block;">
                                                     <label for="exampleInputPassword1">Transaction Status</label>
                                                     <input type="text" name="tr_status" value="Success " required class="form-control" id="exampleInputEmail1">
                                                 </div>

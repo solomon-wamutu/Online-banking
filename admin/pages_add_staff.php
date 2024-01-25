@@ -104,7 +104,7 @@ if (isset($_POST['create_staff_account'])) {
                                             </div>
                                             <div class=" col-md-6 form-group">
                                                 <label for="exampleInputPassword1">Staff Gender</label>
-                                                <select class="form-control" name="sex">
+                                                <select class="form-control" name="sex" required>
                                                     <option>Select Gender</option>
                                                     <option>Female</option>
                                                     <option>Male</option>

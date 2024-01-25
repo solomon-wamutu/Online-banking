@@ -490,7 +490,7 @@ $stmt->close();
           dataPoints: [{
               y: <?php
                   //return total number of accounts opened under savings acc type
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Savings' ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Savings' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($savings);
@@ -505,7 +505,7 @@ $stmt->close();
             {
               y: <?php
                   //return total number of accounts opened under  Retirement  acc type
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type =' Retirement' ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type =' Retirement' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Retirement);
@@ -520,7 +520,7 @@ $stmt->close();
             {
               y: <?php
                   //return total number of accounts opened under  Recurring deposit  acc type
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Recurring deposit' ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Recurring deposit' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Recurring);
@@ -535,7 +535,7 @@ $stmt->close();
             {
               y: <?php
                   //return total number of accounts opened under  Fixed Deposit Account deposit  acc type
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Fixed Deposit Account' ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Fixed Deposit Account' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Fixed);
@@ -550,7 +550,7 @@ $stmt->close();
             {
               y: <?php
                   //return total number of accounts opened under  Current account deposit  acc type
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Current account' ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Current account' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Current);
@@ -583,7 +583,7 @@ $stmt->close();
           dataPoints: [{
               y: <?php
                   //return total number of transactions under  Withdrawals
-                  $result = "SELECT count(*) FROM iB_Transactions WHERE  tr_type ='Withdrawal' ";
+                  $result = "SELECT count(*) FROM ib_transactions WHERE  tr_type ='Withdrawal' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Withdrawals);
@@ -598,7 +598,7 @@ $stmt->close();
             {
               y: <?php
                   //return total number of transactions under  Deposits
-                  $result = "SELECT count(*) FROM iB_Transactions WHERE  tr_type ='Deposit' ";
+                  $result = "SELECT count(*) FROM ib_transactions WHERE  tr_type ='Deposit' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Deposits);
@@ -613,7 +613,7 @@ $stmt->close();
             {
               y: <?php
                   //return total number of transactions under  Deposits
-                  $result = "SELECT count(*) FROM iB_Transactions WHERE  tr_type ='Transfer' ";
+                  $result = "SELECT count(*) FROM ib_transactions WHERE  tr_type ='Transfer' ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($Transfers);

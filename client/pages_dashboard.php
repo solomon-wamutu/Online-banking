@@ -428,7 +428,7 @@ $stmt->close();
               y: <?php
                   //return total number of accounts opened under savings acc type
                   $client_id = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Savings' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Savings' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -445,7 +445,7 @@ $stmt->close();
               y: <?php
                   //return total number of accounts opened under  Retirement  acc type
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type =' Retirement' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type =' Retirement' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -462,7 +462,7 @@ $stmt->close();
               y: <?php
                   //return total number of accounts opened under  Recurring deposit  acc type
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Recurring deposit' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Recurring deposit' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -479,7 +479,7 @@ $stmt->close();
               y: <?php
                   //return total number of accounts opened under  Fixed Deposit Account deposit  acc type
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Fixed Deposit Account' AND client_id = ? ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Fixed Deposit Account' AND client_id = ? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -497,7 +497,7 @@ $stmt->close();
 
                   //return total number of accounts opened under  Current account deposit  acc type
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_bankAccounts WHERE  acc_type ='Current account' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_bankaccounts WHERE  acc_type ='Current account' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -532,7 +532,7 @@ $stmt->close();
               y: <?php
                   //return total number of transactions under  Withdrawals
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_Transactions WHERE  tr_type ='Withdrawal' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_transactions WHERE  tr_type ='Withdrawal' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -549,7 +549,7 @@ $stmt->close();
               y: <?php
                   //return total number of transactions under  Deposits
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_Transactions WHERE  tr_type ='Deposit' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_transactions WHERE  tr_type ='Deposit' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();
@@ -566,7 +566,7 @@ $stmt->close();
               y: <?php
                   //return total number of transactions under  Deposits
                   $client_id  = $_SESSION['client_id'];
-                  $result = "SELECT count(*) FROM iB_Transactions WHERE  tr_type ='Transfer' AND client_id =? ";
+                  $result = "SELECT count(*) FROM ib_transactions WHERE  tr_type ='Transfer' AND client_id =? ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->bind_param('i', $client_id);
                   $stmt->execute();

@@ -79,9 +79,9 @@ while ($auth = $res->fetch_object()) {
 
           <!-- /.social-auth-links -->
 
-          <!-- <p class="mb-1">
+          <p class="mb-1">
             <a href="pages_reset_pwd.php">I forgot my password</a>
-          </p> -->
+          </p>
           <!--
           Uncomment this line to allow account creations for admins
           
