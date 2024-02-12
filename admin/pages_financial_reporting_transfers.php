@@ -6,7 +6,6 @@ check_login();
 $admin_id = $_SESSION['admin_id'];
 
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -58,7 +57,7 @@ $admin_id = $_SESSION['admin_id'];
                       <th>Account No.</th>
                       <th>Amount</th>
                       <th>Acc. Owner</th>
-                      <th>Receiver's Acc.</th>
+                      <th>Receiver's Acc type.</th>
                       <th>Receiver</th>
                       <th>Timestamp</th>
 
@@ -93,8 +92,10 @@ $admin_id = $_SESSION['admin_id'];
                         <td><?php echo $row->account_number; ?></td>
                         <td>$ <?php echo $row->transaction_amt; ?></td>
                         <td><?php echo $row->client_name; ?></td>
-                        <td><?php echo $row->receiving_acc_no; ?></td>
-                        <td><?php echo $row->receiving_acc_holder; ?></td>
+                        <td><?php echo $row->acc_type; ?></td>
+                        <!-- receiving_acc_no -->
+                        <td><?php echo $row->acc_name; ?></td>
+                        <!-- receiving_acc_holder -->
                         <td><?php echo date("d-M-Y h:m:s ", strtotime($transTstamp)); ?></td>
                       </tr>
                     <?php $cnt = $cnt + 1;

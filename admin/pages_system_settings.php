@@ -31,7 +31,6 @@ if (isset($_POST['systemSettings'])) {
   }
 }
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />

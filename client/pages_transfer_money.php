@@ -185,7 +185,6 @@ if (isset($_POST['deposit'])) {
                                                     <input type="text" name="transaction_amt" required class="form-control" id="exampleInputEmail1">
                                                 </div>
                                             </div>
-                                            <!-- Log on to codeastro.com for more projects! -->
                                             <div class="row">
                                                 <div class=" col-md-4 form-group">
                                                     <label for="exampleInputPassword1">Receiving Account Number</label>

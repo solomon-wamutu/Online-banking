@@ -13,7 +13,7 @@ if (isset($_POST['update_acc_type'])) {
 
 
     //Insert Captured information to a database table
-    $query = "UPDATE  iB_Acc_types SET name=?, description=?, rate=? WHERE code=? ";
+    $query = "UPDATE  ib_acc_types SET name=?, description=?, rate=? WHERE code=? ";
     $stmt = $mysqli->prepare($query);
     //bind paramaters
     $rc = $stmt->bind_param('ssss', $name, $description, $rate, $code);
@@ -28,7 +28,6 @@ if (isset($_POST['update_acc_type'])) {
 }
 
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -47,7 +46,7 @@ if (isset($_POST['update_acc_type'])) {
         <?php
         //fetch a iB_Acc_types
         $code = $_GET['code'];
-        $ret = "SELECT * FROM  iB_Acc_types WHERE code = ? ";
+        $ret = "SELECT * FROM  ib_acc_types WHERE code = ? ";
         $stmt = $mysqli->prepare($ret);
         $stmt->bind_param('s', $code);
         $stmt->execute(); //ok
@@ -122,7 +121,7 @@ if (isset($_POST['update_acc_type'])) {
                             </div><!-- /.container-fluid -->
                 </section>
                 <!-- /.content -->
-            </div><!-- Log on to codeastro.com for more projects! -->
+            </div>
         <?php } ?>
         <!-- /.content-wrapper -->
         <?php include("dist/_partials/footer.php"); ?>

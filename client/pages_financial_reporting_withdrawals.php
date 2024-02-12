@@ -6,7 +6,6 @@ check_login();
 $client_id = $_SESSION['client_id'];
 
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -103,7 +102,7 @@ $client_id = $_SESSION['client_id'];
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </div><!-- Log on to codeastro.com for more projects! -->
+          </div>
           <!-- /.col -->
         </div>
         <!-- /.row -->
@@ -190,5 +189,5 @@ $client_id = $_SESSION['client_id'];
     });
   </script>
 </body>
-
+o
 </html>

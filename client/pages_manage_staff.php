@@ -7,7 +7,7 @@ $client_id = $_SESSION['client_id'];
 //fire staff
 if (isset($_GET['fireStaff'])) {
   $id = intval($_GET['fireStaff']);
-  $adn = "DELETE FROM  iB_staff  WHERE client_id = ?";
+  $adn = "DELETE FROM  ib_staff  WHERE client_id = ?";
   $stmt = $mysqli->prepare($adn);
   $stmt->bind_param('i', $id);
   $stmt->execute();
@@ -79,7 +79,7 @@ if (isset($_GET['fireStaff'])) {
                   <tbody>
                     <?php
                     //fetch all iBank staffs
-                    $ret = "SELECT * FROM  iB_staff ORDER BY RAND() ";
+                    $ret = "SELECT * FROM  ib_staff ORDER BY RAND() ";
                     $stmt = $mysqli->prepare($ret);
                     $stmt->execute(); //ok
                     $res = $stmt->get_result();
@@ -96,13 +96,13 @@ if (isset($_GET['fireStaff'])) {
                         <td><?php echo $row->email; ?></td>
                         <td><?php echo $row->sex; ?></td>
                         <td>
-                          <a class="btn btn-success btn-sm" href="pages_view_staff.php?staff_number=<?php echo $row->staff_number; ?>">
+                          <a class="btn btn-success btn-sm" href="pages_view_client.php?staff_number=<?php echo $row->staff_number; ?>">
                             <i class="fas fa-cogs"></i>
                             <i class="fas fa-user-tie"></i>
                             Manage
                           </a>
 
-                          <a class="btn btn-danger btn-sm" href="pages_manage_staff.php?fireStaff=<?php echo $row->client_id; ?>">
+                          <a class="btn btn-danger btn-sm" href="pages_manage_client.php?fireStaff=<?php echo $row->client_id; ?>">
                             <i class="fas fa-trash"></i>
                             <i class="fas fa-user-tie"></i>
                             Delete

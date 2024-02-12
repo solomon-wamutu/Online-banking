@@ -11,7 +11,6 @@ $staff_id = $_SESSION['staff_id'];
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <?php include("dist/_partials/head.php"); ?>
-<!-- Log on to codeastro.com for more projects! -->
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
   <div class="wrapper">
     <!-- Navbar -->
@@ -40,7 +39,6 @@ $staff_id = $_SESSION['staff_id'];
           </div>
         </div><!-- /.container-fluid -->
       </section>
-      <!-- Log on to codeastro.com for more projects! -->
       <!-- Main content -->
       <section class="content">
         <div class="row">

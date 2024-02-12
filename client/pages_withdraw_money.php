@@ -11,7 +11,7 @@ if (isset($_POST['withdrawal'])) {
     $acc_name = $_POST['acc_name'];
     $account_number = $_GET['account_number'];
     $acc_type = $_POST['acc_type'];
-    //$acc_amount  = $_POST['acc_amount'];
+    $acc_amount  = $_POST['acc_amount'];
     $tr_type  = $_POST['tr_type'];
     $tr_status = $_POST['tr_status'];
     $client_id  = $_GET['client_id'];
@@ -56,35 +56,30 @@ if (isset($_POST['withdrawal'])) {
         $notification_stmt->execute();
         //declare a varible which will be passed to alert function
         if ($stmt && $notification_stmt) {
-            $success = "Funds Withdrawled";
+            $success = "Funds Withdrawn successfully";
         } else {
             $err = "Please Try Again Or Try Later";
         }
 
-        /*
-    if(isset($_POST['deposit']))
-    {
-       $account_id = $_GET['account_id'];
-       $acc_amount = $_POST['acc_amount'];
-        
-        //Insert Captured information to a database table
-        $query="UPDATE  iB_bankAccounts SET acc_amount=? WHERE account_id=?";
-        $stmt = $mysqli->prepare($query);
-        //bind paramaters
-        $rc=$stmt->bind_param('si', $acc_amount, $account_id);
-        $stmt->execute();
 
-        //declare a varible which will be passed to alert function
-        if($stmt )
-        {
-            $success = "Money Deposited";
+        if (isset($_POST['deposit'])) {
+            $account_id = $_GET['account_id'];
+            $acc_amount = $_POST['acc_amount'];
+
+            //Insert Captured information to a database table
+            $query = "UPDATE  ib_bankaccounts SET acc_amount=? WHERE account_id=?";
+            $stmt = $mysqli->prepare($query);
+            //bind paramaters
+            $rc = $stmt->bind_param('si', $acc_amount, $account_id);
+            $stmt->execute();
+
+            //declare a varible which will be passed to alert function
+            if ($stmt) {
+                $success = "Money Deposited";
+            } else {
+                $err = "Please Try Again Or Try Later";
+            }
         }
-        else
-        {
-            $err = "Please Try Again Or Try Later";
-        }   
-    }   
-    */
     }
 }
 ?>
@@ -193,7 +188,7 @@ if (isset($_POST['withdrawal'])) {
                                                 </div>
 
                                                 <div class=" col-md-6 form-group">
-                                                    <label for="exampleInputPassword1">Amount Withdraw </label>
+                                                    <label for="exampleInputPassword1">Amount to Withdraw </label>
                                                     <input type="text" name="transaction_amt" required class="form-control" id="exampleInputEmail1">
                                                 </div>
                                                 <div class=" col-md-4 form-group" style="display:none">
@@ -204,7 +199,10 @@ if (isset($_POST['withdrawal'])) {
                                                     <label for="exampleInputPassword1">Transaction Status</label>
                                                     <input type="text" name="tr_status" value="Success " required class="form-control" id="exampleInputEmail1">
                                                 </div>
-
+                                                <div class=" col-md-6 form-group">
+                                                    <label for="exampleInputPassword1">Account Balance</label>
+                                                    <input type="text" name="acc_amount" required class="form-control" id="exampleInputEmail1">
+                                                </div>
                                             </div>
 
                                         </div>

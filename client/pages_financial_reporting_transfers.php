@@ -6,7 +6,6 @@ check_login();
 $client_id = $_SESSION['client_id'];
 
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -97,11 +96,11 @@ $client_id = $_SESSION['client_id'];
                         <td><?php echo $row->client_name; ?></td>
                         <td>
                           <?php 
-                          // echo $row->receiving_acc_no;
-                          //  ?>
+                          echo $row->receiving_acc_no;
+                           ?>
                         </td>
                         <td><?php 
-                        // echo $row->receiving_acc_holder; ?>
+                        echo $row->receiving_acc_holder; ?>
                         </td>
                         <td><?php echo date("d-M-Y h:m:s ", strtotime($transTstamp)); ?></td>
                       </tr>
@@ -115,7 +114,7 @@ $client_id = $_SESSION['client_id'];
             <!-- /.card -->
           </div>
           <!-- /.col -->
-        </div><!-- Log on to codeastro.com for more projects! -->
+        </div>
         <!-- /.row -->
       </section>
       <!-- /.content -->

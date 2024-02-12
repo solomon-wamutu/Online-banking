@@ -10,7 +10,7 @@ if (isset($_POST['reset_password'])) {
     $error = 1;
     $err = "Enter Your Email";
   }
-  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+  if (!filter_list($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     $err = 'Invalid Email';
   }
   $checkEmail = mysqli_query($mysqli, "SELECT `email` FROM `ib_admin` WHERE `email` = '" . $_POST['email'] . "'") or exit(mysqli_error($mysqli));
@@ -83,7 +83,7 @@ while ($auth = $res->fetch_object()) {
         </div>
       </div>
     </div>
-    <script src="lugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
 

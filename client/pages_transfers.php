@@ -6,7 +6,6 @@ check_login();
 $client_id = $_SESSION['client_id'];
 
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -22,7 +21,7 @@ $client_id = $_SESSION['client_id'];
     <?php include("dist/_partials/sidebar.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class ="hold-transition content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <div class="container-fluid">
@@ -40,7 +39,6 @@ $client_id = $_SESSION['client_id'];
           </div>
         </div><!-- /.container-fluid -->
       </section>
-      <!-- Log on to codeastro.com for more projects! -->
       <!-- Main content -->
       <section class="content">
         <div class="row">
@@ -104,7 +102,7 @@ $client_id = $_SESSION['client_id'];
             <!-- /.card -->
           </div>
           <!-- /.col -->
-        </div><!-- Log on to codeastro.com for more projects! -->
+        </div>
         <!-- /.row -->
       </section>
       <!-- /.content -->

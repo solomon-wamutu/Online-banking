@@ -19,7 +19,7 @@ if (isset($_POST['update_client_account'])) {
     move_uploaded_file($_FILES["profile_pic"]["tmp_name"], "dist/img/" . $_FILES["profile_pic"]["name"]);
 
     //Insert Captured information to a database table
-    $query = "UPDATE  iB_clients SET name=?, national_id=?, phone=?, email=?, address=?, profile_pic=? WHERE client_number = ?";
+    $query = "UPDATE  ib_clients SET name=?, national_id=?, phone=?, email=?, address=?, profile_pic=? WHERE client_number = ?";
     $stmt = $mysqli->prepare($query);
     //bind paramaters
     $rc = $stmt->bind_param('sssssss', $name, $national_id, $phone, $email,  $address, $profile_pic, $client_number);
@@ -37,7 +37,7 @@ if (isset($_POST['change_client_password'])) {
     $password = sha1(md5($_POST['password']));
     $client_number = $_GET['client_number'];
     //insert unto certain table in database
-    $query = "UPDATE iB_clients  SET password=? WHERE  client_number=?";
+    $query = "UPDATE ib_clients  SET password=? WHERE  client_number=?";
     $stmt = $mysqli->prepare($query);
     //bind paramaters
     $rc = $stmt->bind_param('ss', $password, $client_number);
@@ -52,7 +52,6 @@ if (isset($_POST['change_client_password'])) {
 
 
 ?>
-<!-- Log on to codeastro.com for more projects! -->
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -72,7 +71,7 @@ if (isset($_POST['change_client_password'])) {
             <!-- Content Header with logged in user details (Page header) -->
             <?php
             $client_number = $_GET['client_number'];
-            $ret = "SELECT * FROM  iB_clients  WHERE client_number = ? ";
+            $ret = "SELECT * FROM  ib_clients  WHERE client_number = ? ";
             $stmt = $mysqli->prepare($ret);
             $stmt->bind_param('s', $client_number);
             $stmt->execute(); //ok
@@ -158,7 +157,7 @@ if (isset($_POST['change_client_password'])) {
                                 </div>
                                 <!-- /.card -->
 
-                                <!-- About Me Box 
+                                <!-- About Me Box -->
                     <div class="card card-purple">
                     <div class="card-header">
                         <h3 class="card-title">About Me</h3>
