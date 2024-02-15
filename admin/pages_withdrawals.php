@@ -42,6 +42,13 @@ else{
   $rc = $notification_stmt->bind_param('s',$notification_details);
   $stmt->execute();
   $notification_stmt->execute();
+
+  if($stmt && $notification_stmt){
+    $success = "Funds Withdrawn successfully";
+  }
+  else{
+    $err = "Please try again later";
+  }
 }
 }
 ?>
