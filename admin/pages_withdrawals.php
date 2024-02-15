@@ -49,6 +49,22 @@ else{
   else{
     $err = "Please try again later";
   }
+
+  if(isset($_POST['deposit'])){
+    $account_id = $_GET['account_id'];
+    $acc_amount = $_POST['acc_amount'];
+    $querry = "UPDATE ib_bankaccounts SET acc_amount =? WHERE account_id = ?";
+    $stmt = $mysqli->prepare($querry);
+    $rc = $stmt->bind_param('si',$acc_amount,$account_id);
+    $stmt->execute();
+    if($stmt){
+      $success = "Money deposiited successfully";
+
+    }
+    else{
+      $err = "Failed to deposit";
+    }
+  }
 }
 }
 ?>
