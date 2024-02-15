@@ -58,7 +58,7 @@ else{
     $rc = $stmt->bind_param('si',$acc_amount,$account_id);
     $stmt->execute();
     if($stmt){
-      $success = "Money deposiited successfully";
+      $success = "Money deposited successfully";
 
     }
     else{
