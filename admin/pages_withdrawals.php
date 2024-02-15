@@ -20,6 +20,14 @@ $client_national_id = $_POST['client_national_id'];
 $transaction_amt = $_POST['transaction_amt'];
 $client_phone = $_POST['client_phone'];
 $notification_details = "$client_name Has withdrawn Ksh $transaction_amt From Bank Account $accont_number";
+
+$result = "SELECT SUM(transaction_amt) FROM $ib_transactions WHERE account_id = ?";
+$stmt = $mysqli->prepare($result);
+$stmt->bind_param('i',$account_id);
+$stmt->execute();
+$stmt->bind_result($amt);
+$stmt->fetch();
+$stmt->close();
 }
 ?>
 
