@@ -29,8 +29,19 @@ $stmt->bind_result($amt);
 $stmt->fetch();
 $stmt->close();
 
-if($transaction_amt > amt){
+if($transaction_amt > $amt){
   $err = "You do not have sufficient funds in your account to complete your transaction. Existing Amount is Ksh $amt";
+}
+else{
+  $querry = "INSERT INTO ib_transactions (tr_code,account_id,acc_name,account_number,acc_type,tr_type,tr_status,client_id,client_name,client_national_id,transaction_amt,client_phone) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+
+  $notification = "INSERT INTO ib_notifications (notification_details) VALUES(?))";
+  $stmt = $mysqli->prepare($querry);
+  $notification_stmt = $mysqli->prepare($notification);
+  $rc = $stmt->bind_param('ssssssssssss',$tr_code,$account_id,$acc_name,$accont_number,$acc_type,$tr_type,$tr_status,$client_id,$client_name,$account_national_id,$transaction_amt,$client_phone);
+  $rc = $notification_stmt->bind_param('s',$notification_details);
+  $stmt->execute();
+  $notification_stmt->execute();
 }
 }
 ?>
