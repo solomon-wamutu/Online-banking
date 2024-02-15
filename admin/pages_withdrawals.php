@@ -28,6 +28,10 @@ $stmt->execute();
 $stmt->bind_result($amt);
 $stmt->fetch();
 $stmt->close();
+
+if($transaction_amt > amt){
+  $err = "You do not have sufficient funds in your account to complete your transaction. Existing Amount is Ksh $amt";
+}
 }
 ?>
 
