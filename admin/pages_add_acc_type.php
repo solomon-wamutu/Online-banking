@@ -145,6 +145,5 @@ if (isset($_POST['create_acc_type'])) {
         CKEDITOR.replace('desc')
     </script>
     </script>
-</body>
-
+    </body>
 </html>

@@ -96,8 +96,8 @@ while ($auth = $res->fetch_object()) {
                     </form>
 
                     <p class="mt-3 mb-1">
-                        <!--           <a href="pages_staff_index.php">Login</a>
- -->
+                                  <a href="pages_staff_index.php">Login</a>
+
                     </p>
 
                 </div>
