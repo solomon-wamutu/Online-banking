@@ -299,8 +299,6 @@ if (isset($_POST['change_client_password'])) {
                         <!-- /.row -->
                     </div><!-- /.container-fluid -->
                 </section>
-                <!-- /.content -->
-
             <?php } ?>
         </div>
         <!-- /.content-wrapper -->
